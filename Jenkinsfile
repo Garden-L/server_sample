@@ -16,7 +16,7 @@ pipeline {
         
         stage('open server') {
             steps {
-                sh "sudo node ./src/server.js"
+                sh "sudo node src/server.js"
             }
         }
     }
