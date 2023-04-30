@@ -1,7 +1,7 @@
 pipeline {
     agent any
     
-    stages() {
+    stages {
         stage('git clone') {
             steps {
                 git 'https://github.com/SOUTH-KOREAN/server_sample.git'
