@@ -1,21 +1,24 @@
 pipeline {
     agent any
-
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
+    
+    stages() {
+        stage('git clone') {
+            steps() {
+                git 'https://github.com/SOUTH-KOREAN/server_sample.git'
             }
         }
+        
         stage('Test') {
             steps {
                 echo 'Testing..'
             }
         }
-        stage('Deploy') {
+        
+        stage('execute sh') {
             steps {
-                echo 'Deploying....'
+                sh "chmod 774 ./project.sh"
+                sh "./project.sh"
             }
-        }
+        }        
     }
 }
