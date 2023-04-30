@@ -1,20 +1,16 @@
 pipeline {
     agent any
-
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building..'
+    
+    stages() {
+        stage('git clone') {
+            steps() {
+                git 'https://github.com/SOUTH-KOREAN/server_sample.git'
             }
         }
-        stage('Test') {
+        
+        stage('install nodejs') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                sh "sudo yum install nodejs"
             }
         }
     }
