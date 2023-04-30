@@ -3,8 +3,9 @@ pipeline {
     
     stages() {
         stage('git clone') {
-            steps() {
+            steps {
                 git 'https://github.com/SOUTH-KOREAN/server_sample.git'
+                echo "install" 
             }
         }
         
