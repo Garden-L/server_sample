@@ -1,10 +1,20 @@
 pipeline {
     agent any
-    
+
     stages {
-        stage('install nodejs') {
+        stage('Build') {
             steps {
-                sh "sudo yum install nodejs"
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
             }
         }
     }
