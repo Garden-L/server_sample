@@ -16,7 +16,7 @@ pipeline {
         
         stage('open server') {
             steps {
-                sh 'npm start'
+                sh 'sudo node src/server.js'
             }
         }
     }
