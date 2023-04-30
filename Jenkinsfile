@@ -11,9 +11,13 @@ pipeline {
         stage('install nodejs') {
             steps {
                 sh "npm install"
+            }
+        }
+        
+        stage('open server') {
+            steps {
                 sh "sudo node ./src/server.js"
             }
         }
-               
     }
 }
