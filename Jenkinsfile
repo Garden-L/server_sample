@@ -3,7 +3,7 @@ pipeline {
     
     stages() {
         stage('git clone') {
-            steps() {
+            steps {
                 git 'https://github.com/SOUTH-KOREAN/server_sample.git'
             }
         }
@@ -13,12 +13,6 @@ pipeline {
                 echo 'Testing..'
             }
         }
-        
-        stage('execute sh') {
-            steps {
-                sh "chmod 774 ./project.sh"
-                sh "./project.sh"
-            }
-        }        
+               
     }
 }
