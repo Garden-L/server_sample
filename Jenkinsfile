@@ -8,9 +8,10 @@ pipeline {
             }
         }
         
-        stage('Test') {
+        stage('install nodejs') {
             steps {
-                echo 'Testing..'
+                sh "sudo yum install nodejs"
+                sh "sudo npm install"
             }
         }
                
