@@ -13,5 +13,19 @@ pipeline {
                 sh "make"
             }
         }
+
+        stage("test") {
+            steps {
+                sh './test --gtest_output="xml:testresults.xml"'
+            }
+
+            post {
+                always {
+                    junit './testresults.xml'
+                }
+            }
+        }
+
+
     }
 }
