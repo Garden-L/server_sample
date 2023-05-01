@@ -18,9 +18,6 @@ pipeline {
             steps {
                 sh 'sudo node src/server.js'
             }
-            steps {
-                echo "success"
-            }
         }
     }
 }
