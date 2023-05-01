@@ -19,5 +19,13 @@ pipeline {
                 sh 'sudo node src/server.js'
             }
         }
+         stage('Build') {
+            steps {
+                sh 'echo "Build started"'
+            }
+            steps {
+                sh 'echo "Build completed"'
+            }
+        }
     }
 }
