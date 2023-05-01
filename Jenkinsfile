@@ -8,23 +8,9 @@ pipeline {
             }
         }
         
-        stage('install nodejs') {
+        stage("compile") {
             steps {
-                sh "npm install"
-            }
-        }
-        
-        stage('open server') {
-            steps {
-                sh 'sudo node src/server.js'
-            }
-        }
-         stage('Build') {
-            steps {
-                sh 'echo "Build started"'
-            }
-            steps {
-                sh 'echo "Build completed"'
+                sh "make"
             }
         }
     }
